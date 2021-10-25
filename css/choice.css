@@ -1,0 +1,61 @@
+.gap {
+    
+    padding: 10x
+}
+
+.clsAutoFit {
+    height: 400px;
+    width: 400px;
+}
+
+
+
+.clsImg {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.btn-xl {
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    width:25%;    //Specify your width here
+}
+
+.cscore {
+    width: 200px; height: 200px; padding: 20px; border: 1px solid black ; text-align: center
+}
+
+.bg-score {    
+    height: 300px;
+    background-color: aqua;
+}
+
+.dot {
+    height: 100px;
+    width: 200px;
+    background-color: #560B0B;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot.more {
+        background-color: #00bfff;
+    
+}
+.square {
+  height: 100px;
+  width: 100px;
+  background-color: #008000;
+}
+
+.oval {
+  height: 50px;
+  width: 100px;
+  background-color: #000080;
+  border-radius: 50%;
+}
+
+.keep-in-line {
+    display: inline-block;
+}

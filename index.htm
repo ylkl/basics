@@ -1,0 +1,401 @@
+    <!doctype html>
+    <html lang="en">
+      <head>   
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/choice.css">
+          <link rel="stylesheet" href="css/modal-youtube.css">
+
+        <title>Choose the best answer!</title>
+      </head>
+      <body>
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+             <li class="nav-item">
+                 <!-- active class in the below makes the tab look different from others -->
+        <a class="nav-link active" id="math-tab" data-toggle="tab" href="#math" role="tab" aria-controls="contact" aria-selected="true" onClick="fillWithRandomObjects(event)">Math</a>
+      </li>
+<li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#food" role="tab" aria-controls="profile" aria-selected="false"
+               onclick='loadImage("foodCategory","foodSubCategory")'>Food</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" id="home-tab" data-toggle="tab" href="#animals" role="tab" aria-controls="home" aria-selected="false" onclick='loadImage("animalCategory","animalSubCategory")'>Animals</a>
+      </li>
+      <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#family" role="tab" aria-controls="profile" aria-selected="false"
+               onclick='loadImage("peopleCategory","peopleSubCategory")'>Family</a>
+      </li>
+              <!-- This is the mixed tab but it is temporarily named Mixed -->
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#mixed" role="tab" aria-controls="profile" aria-selected="false"
+               onclick='loadImage("mixedCategory","mixedSubCategory")'>Body Parts - Mixed</a>
+      </li>
+    <!-- Kalab started to gravitate using Body Parts by himself. Since we want him 
+    to use Mixed tab instead, we shall temporariy name Mixed as Body Parts. Body parts will 
+    be commented out for now. We will bring it up gradually in the future -->
+              <!---
+    <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#body" role="tab" aria-controls="profile" aria-selected="false"
+               onclick='loadImage("bodyCategory","bodySubCategory")'>Body Parts</a>
+      </li>
+            -->
+    <li class="nav-item">
+        <a class="nav-link" id="typing-tab" data-toggle="tab" href="#typing" role="tab" aria-controls="contact" aria-selected="false" onClick="fillWithRandomNumbers(event)">Typing</a>
+      </li>
+    <li class="nav-item">
+        <a class="nav-link" id="typing-tab" data-toggle="tab" href="#money" role="tab" aria-controls="contact" aria-selected="false" onclick='loadImage("moneyCategory","moneySubCategory")'>Money</a>
+      </li>
+    <li class="nav-item">
+        <a class="nav-link" id="typing-tab" data-toggle="tab" href="#coins" role="tab" aria-controls="contact" aria-selected="false" onclick='displayRandomObjects(true, 3, "quarter")'>All In One Place</a>
+      </li>
+    
+
+    <li class="nav-item">
+        <a class="nav-link" id="typing-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="contact" aria-selected="false" onClick="">Settings</a>
+      </li>
+    </ul>
+          <!-- Tabs-------------------------------------------------------------------- -->
+    <div class="tab-content" id="myTabContent">
+        
+        
+        <!- ------------------- Animals Content -------------- -->
+      <div class="tab-pane fade " id="animals" role="tabpanel" aria-labelledby="home-tab">
+           <div class="container">
+        <div class="row" style="padding: 30px">  
+            <div class="col-lg-3  col-md-3  col-sm-3  col-xs-3">
+            </div>
+            <div class="col-lg-6  col-md-6  col-sm-6  col-xs-6 clsAutoFit bg-success" style="padding: 10px">          
+              <img src="img/animal/lion/lion_1.jpg" class="clsImg" alt="Default  Cat Image" id="animalquestion" />
+              <div class="col-lg-12  col-md-12  col-sm-12  col-xs-12">
+                   <input type="button" id="animal1" class="btn btn-default btn-xl" value="bear" onClick="checkAnswer(this.value)">            
+           
+                   <input type="button" id="animal2" class="btn btn-default btn-xl " value="dog"
+                          onClick="checkAnswer(this.value)"> 
+                  <input type="button" id="animal3" class="btn btn-default btn-xl " value="chick"
+                          onClick="checkAnswer(this.value)"> 
+            </div>
+              </div>                   
+            <div class="col-lg-3  col-md-3  col-sm-3  col-xs-3">
+                    <div class="row">
+                        <div class="co-lg-6 col-md-6 col-sm-3 col-xs-3"   style="padding-left:  100px">
+                            <p id="score" class="cscore"/>
+                               <span style="text-align: center; font-size: 1px; vertical-align:">0</span>
+                            </p>
+                        </div>
+                    </div>
+            </div>
+
+        </div>
+          </div>          
+        </div>
+          <!-- -----------------------  End Animal Content  -->
+          
+    <!----------------------------------------------- Begin Family Content ------------------>      
+    <div class="tab-pane fade" id="family" role="tabpanel" aria-labelledby="profile-tab">Family
+        <div class="container">
+               <div class="row" style="padding: 30px">  
+            <div class="col-lg-3  col-md-3  col-sm-3  col-xs-3">
+            </div>
+            <div class="col-lg-6  col-md-6  col-sm-6  col-xs-6 clsAutoFit bg-success" style="padding: 10px">          
+              <img src="" class="clsImg" alt="No Default Image Supplied" id="peoplequestion" />
+              <div class="col-lg-12  col-md-12  col-sm-12  col-xs-12">
+                   <input type="button" id="people1" class="btn btn-default btn-xl" value="" onClick="checkAnswer(this.value)">            
+           
+                   <input type="button" id="people2" class="btn btn-default btn-xl " value=""
+                          onClick="checkAnswer(this.value)"> 
+                  <input type="button" id="people3" class="btn btn-default btn-xl " value=""
+                          onClick="checkAnswer(this.value)"> 
+            </div>
+              </div>                   
+            
+        </div>
+          </div>     
+          
+    </div>    
+<!----------------------------------------------- End Family Content ------------------>   
+            <!----------------------------------------------- Begin Body Parts Content ------------------>      
+    <div class="tab-pane fade" id="body" role="tabpanel" aria-labelledby="profile-tab">Body Parts
+        <div class="container">
+               <div class="row" style="padding: 30px">  
+            <div class="col-lg-3  col-md-3  col-sm-3  col-xs-3">
+            </div>
+            <div class="col-lg-6  col-md-6  col-sm-6  col-xs-6 clsAutoFit bg-success" style="padding: 10px">          
+              <img src="" class="clsImg" alt="No Default Image Supplied" id="bodyquestion" />
+              <div class="col-lg-12  col-md-12  col-sm-12  col-xs-12">
+                   <input type="button" id="body1" class="btn btn-default btn-xl" value="" onClick="checkAnswer(this.value)">            
+           
+                   <input type="button" id="body2" class="btn btn-default btn-xl " value=""
+                          onClick="checkAnswer(this.value)"> 
+                  <input type="button" id="body3" class="btn btn-default btn-xl " value=""
+                          onClick="checkAnswer(this.value)"> 
+            </div>
+              </div>                   
+            
+        </div>
+          </div>     
+          
+    </div>    
+<!----------------------------------------------- End Body Parts Content ------------------>      
+  
+ <!----------------------------------------------- Begin Money Content ------------------>      
+    <div class="tab-pane fade" id="money" role="tabpanel" aria-labelledby="profile-tab">Money
+        <div class="container">
+               <div class="row" style="padding: 30px">  
+            <div class="col-lg-3  col-md-3  col-sm-3  col-xs-3">
+            </div>
+            <div class="col-lg-6  col-md-6  col-sm-6  col-xs-6 clsAutoFit bg-success" style="padding: 10px">          
+              <img src="" class="clsImg" alt="No Default Image Supplied" id="moneyquestion" />
+                <br/><br/>
+              <div class="col-lg-12  col-md-12  col-sm-12  col-xs-12">
+                   <input type="button" id="money1" class="btn btn-default btn-xl" value="" onClick="checkAnswer(this.value)">            
+           
+                   <input type="button" id="money2" class="btn btn-default btn-xl " value=""
+                          onClick="checkAnswer(this.value)"> 
+                  <input type="button" id="money3" class="btn btn-default btn-xl " value=""
+                          onClick="checkAnswer(this.value)"> 
+            </div>
+              </div>                   
+            
+        </div>
+          </div>     
+          
+    </div>    
+<!----------------------------------------------- End Money Content ------------------>
+          
+<!----------------------------------------------- Begin Coins Content ---------------->
+
+<div class="tab-pane fade" id="coins" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="container">
+        <div class="row" style="padding: 30px"> 
+        
+            <div class="col-lg-2 col-md-2  col-sm-2  col-xs-2">
+            <select name="lessonOption" onchange="selectLesson(this.value)">
+                <option value="">Select lesson</option>
+                <option value="money">Coins</option>
+                <option value="people">Family</option>
+                <option value="animal">Animals</option>
+            <!--    <option value="body">Body Parts</option>  -->
+                <option value="mixed">Body Parts Mixed</option>
+                <option value="food">Food</option>
+            </select>
+            </div>
+            <div class="col-lg-3  col-md-3  col-sm-3  col-xs-3 clsAutoFit bg-success" style="padding: 10px"> 
+                <a  href="#" onclick="checkObjectAnswer(this)"><img src="" class="clsImg" alt="No Default Image Supplied" id="object0" /></a>
+            </div>
+            <div class="col-lg-3  col-md-3  col-sm-3  col-xs-3 clsAutoFit bg-success" style="padding: 10px"> 
+                <a  href="#" onclick="checkObjectAnswer(this)"><img src="" class="clsImg" alt="No Default Image Supplied" id="object1" /></a> 
+            </div>
+            <div class="col-lg-3  col-md-3  col-sm-3  col-xs-3 clsAutoFit bg-success" style="padding: 10px"> 
+                <a  href="#" onclick="checkObjectAnswer(this)"><img src="" class="clsImg" alt="No Default Image Supplied" id="object2" /></a> 
+            </div>
+            <div class="col-lg-2 col-md-2  col-sm-2  col-xs-2">
+            </div>
+        </div>
+          </div>     
+          <input type="hidden" id="target" />
+    </div>    
+          
+
+<!----------------------------------------------- End Coins Content ------------------>
+          
+          
+<!----------------------------------------------- Begin Food Content ------------------>      
+    <div class="tab-pane fade" id="food" role="tabpanel" aria-labelledby="profile-tab">Food
+        <div class="container">
+               <div class="row" style="padding: 30px">  
+            <div class="col-lg-3  col-md-3  col-sm-3  col-xs-3">
+            </div>
+            <div class="col-lg-6  col-md-6  col-sm-6  col-xs-6 clsAutoFit bg-success" style="padding: 10px">          
+              <img src="" class="clsImg" alt="No Default Image Supplied" id="foodquestion" />
+             <br>
+                   <input type="button" id="food1" class="btn btn-default btn-lg" value="" onClick="checkAnswer(this.value)">            
+           
+                   <input type="button" id="food2" class="btn btn-default btn-lg " value=""
+                          onClick="checkAnswer(this.value)"> 
+                  <input type="button" id="food3" class="btn btn-default btn-lg " value=""
+                          onClick="checkAnswer(this.value)"> 
+            
+              </div>                   
+            
+        </div>
+          </div>     
+          
+    </div>    
+
+<!--                        End Food Content ----------------------------------------->
+<!----------------------------------------------- End Family Content ------------------>      
+          
+<!-- -----------------------  Start Math Content  ------------------------------------------->
+          <!-- The show active class in the div below determines which tab is the active tab -->
+    <div class="tab-pane fade show active " id="math" role="tabpanel" aria-labelledby="math-tab">
+        <span style="font-style: italic">Answer a few questions correctly on this page or in any of the given Tabs to get access to <strong>KL YouTube TV</strong> V1.3</span>
+          <div class="container">
+            <div class="row" style="padding: 3px">
+                <div class="col-lg-3  col-md-3  col-sm-3  col-xs-3">
+                </div>
+                <div class="col-lg-6  col-md-6  col-sm-6  col-xs-6">
+            <div class="col-lg-12  col-md-12  col-sm-12  col-xs-12" style="padding: 10px">
+                 <div style="text-align:center">
+                  <h1>How Many?</h3><br/><br/>
+                     <p id="objects">
+                         <!-- The following spans should be removed unless we want to make Math the default page -->
+                         <span class='dot'></span> &nbsp; <span class='dot'></span>
+                         
+                     </p>
+                </div>
+            </div> <br/>
+                        <div class="col-lg-12  col-md-12  col-sm-12  col-xs-12 bg-warning" style="padding: 10px">
+                            <div>
+                                <span style="font-size: 20px; font-weight: bold">Answer:</span> &nbsp;<input style="text-align: center; font-size: 20px; text-align: left; font-weight: bold"  type="text"  id="objectsAnswer" autofocus /> &nbsp;&nbsp; 
+                <input   type="button" id="objectsSubmit" style="font-weight: bold" class="btn btn-default btn-lg "value="Submit" onclick="objectsSubmit()"/>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-lg-3  col-md-3  col-sm-3  col-xs-3">
+                </div>
+              </div>
+        </div>          
+    </div>
+          
+          <!------------------------------  End math Content  --------------------------->
+          
+          
+          <!--  Typing Numbers Content  start  -->
+    <div class="tab-pane fade" id="typing" role="tabpanel" aria-labelledby="typing-tab">
+          <!-- type numbers  -->
+        <div class="container">
+                    
+            <div class="row">
+                
+                <div class="col-lg-3  col-md-3  col-sm-3  col-xs-3 ">                                         
+                </div>
+                  <div class="col-lg-6  col-md-6  col-sm-6  col-xs-6 ">
+                      
+                            <div class="col-lg-12  col-md-12  col-sm-12  col-xs-12 bg-success" >
+                                    <p id="randNumbers" > 5555</p>
+                            </div>                      
+                           <div class="col-lg-12  col-md-12  col-sm-12  col-xs-12 bg-danger">
+                              <input type="text" style="text-align: center; font-size: 25px; text-align: left; font-weight: bold" id="randQuestion"/> <input type="button" id="answer2" class="btn btn-default btn-xl " value="Submit" onclick="typingAnswer()"/>
+                            </div>                      
+                    </div>
+                <div class="col-lg-3  col-md-3  col-sm-3  col-xs-3 ">
+                        
+                    </div> 
+            </div>
+        </div>
+            
+    </div>
+    <!-----------------------Typing Numbers Content End --------------------------------------------->
+     <!----------------------------------------------- Begin Mixed (Quick Look) Content ------------------>      
+    <div class="tab-pane fade" id="mixed" role="tabpanel" aria-labelledby="profile-tab">Body Parts Plus
+        <div class="container">
+               <div class="row" style="padding: 30px">  
+            <div class="col-lg-3  col-md-3  col-sm-3  col-xs-3">
+            </div>
+            <div class="col-lg-6  col-md-6  col-sm-6  col-xs-6 clsAutoFit bg-success" style="padding: 10px">          
+              <img src="" class="clsImg" alt="No Default Image Supplied" id="mixedquestion" />
+              <br>
+                   <input type="button" id="mixed1" class="btn btn-default btn-lg" value="" onClick="checkAnswer(this.value)">            
+           
+                   <input type="button" id="mixed2" class="btn btn-default btn-lg " value=""
+                          onClick="checkAnswer(this.value)"> 
+                  <input type="button" id="mixed3" class="btn btn-default btn-lg " value=""
+                          onClick="checkAnswer(this.value)"> 
+                      </div>                   
+            
+        </div>
+          </div>     
+          
+    </div>    
+<!----------------------------------------------- End Mixed (Quick Look) Content ------------------>    
+    <!------------------------  Settings Content  start ---------------------------------------------->
+    <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+          <!-- type numbers  -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3  col-md-3  col-sm-3  col-xs-3 ">                                         
+                </div>
+                <div class="col-lg-3  col-md-3  col-sm-3  col-xs-3 ">
+                    <input type="button" id="muteSound" class="dot" value="Mute Sound" onclick="muteUnMuteSound(true)"/>
+                </div>
+                <div class="col-lg-3  col-md-3  col-sm-3">
+                    <input type="button" id="unMuteSound" class="dot" value="Unmute Sound" onclick="muteUnMuteSound(false)"/>
+                </div>
+                <div class="col-lg-3  col-md-3  col-sm-3  col-xs-3  ">                                         
+                </div>
+            </div>
+            <br/><br/>
+            
+             <div class="row">
+                <div class="col-lg-3  col-md-3  col-sm-3  col-xs-3  ">                                         
+                </div>
+                <div class="col-lg-3  col-md-3  col-sm-3  col-xs-3 ">
+                    <input type="button" id="hideImg" class="dot more" value="Hide Image" onclick="showHideImg(true)"/>
+                </div>
+                <div class="col-lg-3  col-md-3  col-sm-3  col-xs-3 ">
+                    <input type="button" id="showImg" class="dot more" value="Show Image" onclick="showHideImg(false)"/>
+                </div>
+                <div class="col-lg-3  col-md-3  col-sm-3  col-xs-3 ">                                         
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3  col-md-3  col-sm-3  col-xs-3 ">            Reward Threshold: Current = <span id="currentRewardThreshold"></span> <br>
+                    New Threshold: <input id="rewardThreshold" type="text" >&nbsp; <button type="button" class="btn btn-primary" onclick="setRewardThreshold()">Submit</button>                          
+                </div>
+            </div>
+        </div>
+            
+    </div>
+          <!------------ Settings Content End -------------------------------------------------->
+    
+          
+    </div>
+         
+          
+          <!-- Hiddedn fields -->
+        <input id="answer" name="answer" type="hidden" value="Cute Cat">
+          <!-- Category is the tabls such as Animal, Family, etc -->
+        <input id="category" name="answer" type="hidden" value="animals">            
+        <audio id="errorSound">  <source src="sound/error.mp3" type="audio/mpeg"></audio>
+        <audio id="successSound">  <source src="sound/success.mp3" type="audio/mpeg"></audio>
+        <audio id="reminder__wagna__fanfare">  <source src="sound/reminder__wagna__fanfare.mp3" type="audio/mpeg"></audio>
+        <audio id="currentSound">  <source src="" type="audio/mpeg"></audio>
+            <!-- Modal start -->
+        <div  id="youtube-modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-fullscreen-md-down" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">KL YouTube TV 21By9</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!-- the following  div has classes class="embed-responsive  embed-responsive-21by9"
+        to make it scale well with laptop and cell phone. notice the addition of 
+        class class="embed-responsive-item" in the iframe  -->
+      <div class="embed-responsive  embed-responsive-21by9" >        
+      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/videoseries?list=PLrN7HzBNmEol5jeOZOrgdkPOHgjGABfQ1&controls=1&rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope;" ></iframe>          
+     </div>
+    </div>
+  </div>
+</div>
+        <!-- Modal end -->
+       
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo?start=0" crossorigin="anonymous"></script>
+        <script  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="js/bootstrap.min.js"></script>
+        
+        <script src="js/parent.js"></script>        
+        <script src="js/choice.js"></script>
+        <script src="js/typing.js"></script>
+        <script src="js/objects.js"></script>
+        <script src="js/coins.js"></script>
+      </body>
+    </html>
